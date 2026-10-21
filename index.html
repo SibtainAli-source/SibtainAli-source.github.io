@@ -1,1 +1,125 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sibtain Ali | n8n Automation Portfolio</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b1020;color:#f4f7ff;font-family:Arial,sans-serif;line-height:1.6}
+header{padding:22px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #27304a}
+.logo{font-weight:bold;color:#7cdbb5;font-size:21px}
+nav a{color:#dbe3f5;text-decoration:none;margin-left:18px}
+.hero{padding:85px 8%;background:linear-gradient(120deg,#121d35,#172d3b)}
+.tag{color:#7cdbb5;letter-spacing:2px;font-weight:bold}
+h1{font-size:clamp(36px,6vw,65px);line-height:1.1;margin:15px 0}
+h1 span{color:#7cdbb5}
+p{color:#b8c3d9}
+.hero p{max-width:650px;font-size:18px}
+.btn{display:inline-block;background:#7cdbb5;color:#07121b;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold;margin:10px 8px 0 0}
+section{padding:55px 8%}
+h2{font-size:32px;margin-top:0}
+.sub{margin-top:-10px;margin-bottom:28px}
+.skills{display:flex;gap:10px;flex-wrap:wrap}
+.skill{border:1px solid #34435c;padding:9px 14px;border-radius:20px;color:#dbe3f5}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:#121a2d;border:1px solid #283650;padding:22px;border-radius:14px}
+.card h3{margin-top:0;color:#7cdbb5}
+.card p{font-size:14px}
+.card a{color:#7cdbb5;text-decoration:none}
+#contact{background:#121a2d}
+footer{text-align:center;padding:25px;color:#8997b2;border-top:1px solid #27304a}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Sibtain Ali</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="tag">N8N • AI • AUTOMATION</div>
+  <h1>Building Smarter<br><span>AI Automations</span></h1>
+  <p>Hi, I'm Sibtain Ali. I build workflow automations, AI assistants, chatbots, and integrations that help businesses save time and simplify repetitive tasks.</p>
+  <a class="btn" href="#projects">Explore My Projects</a>
+  <a class="btn" href="#contact">Contact Me</a>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I work on practical automation projects using n8n, AI models, APIs, chatbots, and business tools. My goal is to create useful workflows that connect different applications and automate repetitive work.</p>
+</section>
+
+<section id="skills">
+  <h2>My Skills</h2>
+  <p class="sub">Tools and technologies I practise with.</p>
+  <div class="skills">
+    <span class="skill">n8n Workflows</span>
+    <span class="skill">AI Agents</span>
+    <span class="skill">API Integration</span>
+    <span class="skill">Webhooks</span>
+    <span class="skill">Telegram Bots</span>
+    <span class="skill">WhatsApp Automation</span>
+    <span class="skill">Google Sheets</span>
+    <span class="skill">CRM Automation</span>
+    <span class="skill">Lead Generation</span>
+    <span class="skill">AI Content Automation</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>My Automation Projects</h2>
+  <p class="sub">Explore my n8n workflow projects.</p>
+  <div class="grid" id="projectGrid"></div>
+</section>
+
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <p>Interested in workflow automation or AI assistants? You can contact me to discuss a project.</p>
+  <p>GitHub: <a style="color:#7cdbb5" href="https://github.com/SibtainAli-source" target="_blank" rel="noopener">View My GitHub</a></p>
+</section>
+
+<footer>© 2026 Sibtain Ali · AI & Automation Portfolio</footer>
+
+<script>
+const projects = [
+["AI CV Screener","Screens CV data and helps organise candidate information.","AI, HR Automation","AI_CV_Screener.json"],
+["AI Video Shorts Maker","Workflow concept for creating AI-assisted short video content.","AI, Video","AI_Video_Shorts_Maker.json"],
+["AI Voice Receptionist","Voice assistant integration workflow using Vapi.","Voice AI, APIs","AI_Voice_Receptionist_Vapi.json"],
+["LinkedIn Daily AI Post","Automates an AI-assisted LinkedIn content workflow.","AI, Social Media","LinkedIn_Daily_AI_Post.json"],
+["LinkedIn Lead Finder","Workflow for organising LinkedIn lead information.","Lead Generation","LinkedIn_Lead_Finder.json"],
+["Property Deal Scorer","Helps score and organise property deal information.","Real Estate, AI","Property_Deal_Scorer.json"],
+["Restaurant Order Bot","Chatbot workflow concept for restaurant orders.","Chatbot, Business","Restaurant_Order_Bot.json"],
+["Telegram AI Chatbot","AI chatbot integration for Telegram.","AI, Telegram","Telegram_AI_Chatbot.json"],
+["Upwork Job Alert","Workflow for finding and organising job opportunities.","Freelancing, Alerts","Upwork_Job_Alert.json"],
+["WhatsApp AI Chatbot","WhatsApp chatbot integration workflow.","AI, WhatsApp","WhatsApp_AI_Chatbot.json"]
+];
+
+const grid = document.getElementById("projectGrid");
+projects.forEach(p => {
+  const card = document.createElement("article");
+  card.className = "card";
+  const title = document.createElement("h3");
+  title.textContent = p[0];
+  const desc = document.createElement("p");
+  desc.textContent = p[1];
+  const category = document.createElement("p");
+  category.textContent = p[2];
+  const link = document.createElement("a");
+  link.href = "workflows/" + p[3];
+  link.textContent = "View workflow JSON →";
+  link.target = "_blank";
+  link.rel = "noopener";
+  card.append(title, desc, category, link);
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>
+
